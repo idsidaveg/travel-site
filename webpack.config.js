@@ -23,7 +23,7 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [
-                    'style-loader?url=false','css-loader', {
+                    'style-loader','css-loader?url=false', {
                         loader: 'postcss-loader',
                         options: {postcssOptions: {plugins: postCSSPlugins}}
                     }
