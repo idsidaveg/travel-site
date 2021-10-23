@@ -1,0 +1,50 @@
+.testimonial {
+    background-color: rgba(255,255,255,.8);
+    padding: 0 18px 0 18px;
+
+    /* this makes sure the photo doesn't overlap */
+    margin-bottom: 98px;
+
+    /*this produces padding within the css, this way text is right against the div*/
+    @mixin atLarge{
+        margin-bottom: 0;
+        padding: 0 1.8125rem 1px 1.8125rem;
+    }
+
+    /* handles the extra space we just added for overlapping 98px on last element */
+    &--last {
+        margin-bottom: 0;
+    }
+
+    &__photo {
+        /*create a circle around the photo by adjusting the size*/
+        border-radius: 80px;
+        overflow: hidden;
+        width: 160px;
+        height: 160px;
+        /*center the image in the div */
+        margin: 0 auto -80px auto;
+        /*move the image above the area of the div*/
+        /*additional adjustment required to tell other elements that the picture has move*/
+        position: relative;
+        top: -80px;
+        /*add a border around the image*/
+        border: 6px solid rgba(255,255,255,.8);
+    }
+
+    &__title {
+        color: $mainBlue;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin:0;
+    }
+
+    &__subtitle {
+        color: $mainOrange;
+        text-align: center;
+        font-weight: 400;
+        font-size: .9375rem;
+        margin:  .25rem 0 1rem 0;
+    }
+}
