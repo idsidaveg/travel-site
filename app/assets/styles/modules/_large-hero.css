@@ -1,11 +1,28 @@
 .large-hero {
     border-bottom: 10px solid $mainBlue;
-    position:relative;
+    /* original before using grid */
+    /* position:relative; */
+    display: grid;
+    grid-template-columns: 1fr;
 
     &__image{
-        display: block;
+        grid-column: 1;
+        grid-row: 1;
+        img {
+            display: block;
+        }
+
     }
 
+    &__text-content {
+        align-self: center;
+        grid-column: 1;
+        grid-row: 1;
+        padding-top: 60px;
+        text-align: center;
+    }
+
+    /* before grid change
     &__text-content{
         position: absolute;
         top: 50%;
@@ -14,6 +31,7 @@
         width: 100%;
         text-align: center;
     }
+    */
 
     &__title{
         font-weight: 300;
