@@ -1,10 +1,21 @@
+// lazyloading - npm install lazysizes
+// site is depended on this so no --save-dev was added Video-58
+// html is updated for images so they are only loaded when needed
+// implement by adding lazyload to the class of an element class="lazyload" update the sourceset
+// attribute: srcset to data-srceset
+// note: lodash was also installed previously for some functionality in
+// javascript files
+
 import '../styles/styles.css';
+import 'lazysizes';
 import MobileMenu from './modules/MobileMenu';
 import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/Sticky-Header';
 
 
-// create variables that we will use later
+// create variables that we will use later, other modules will use
+// look at event-emitter on npm - broadcast events used to other modules
+// this is how the webcontrols work on sharepoint
 new StickyHeader();
 new RevealOnScroll(document.querySelectorAll(".feature-item"), 75);
 new RevealOnScroll(document.querySelectorAll(".testimonial"), 60);
