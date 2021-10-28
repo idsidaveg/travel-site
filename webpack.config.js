@@ -99,9 +99,9 @@ if (currentTask == 'build'){
     // if different an update to the file will be downloaded automatically for the user
     cssConfig.use.unshift(MiniCssExtractPlugin.loader);
     config.output = {
-        path: path.resolve(__dirname, 'docs'),
         filename: "[name].[chunkhash].js",
         chunkFilename: '[name].[chunkhash].js',
+        path: path.resolve(__dirname, 'docs')
     }
     config.mode = 'production';
     config.optimization = {
