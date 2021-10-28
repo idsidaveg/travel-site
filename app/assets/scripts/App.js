@@ -13,6 +13,17 @@ import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/Sticky-Header';
 import ClientArea from './modules/ClientArea';
 
+// react related code goes here
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+// import react components  that we create
+import MyAmazingComponent from './modules/MyAmazingComponent';
+
+// syntax of next command is the component name and where it should be rendered, called by id ('#')
+ReactDOM.render(<MyAmazingComponent />, document.querySelector("#my-react-example"));
+
+
 // create variables that we will use later, other modules will use
 // look at event-emitter on npm - broadcast events used to other modules
 // this is how the webcontrols work on sharepoint

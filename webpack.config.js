@@ -58,7 +58,17 @@ let config = {
     },
     module: {
         rules: [
-            cssConfig
+            cssConfig,
+            {
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-react', '@babel/preset-env']
+                    }
+                }
+            }
         ]
     }
 };
@@ -83,16 +93,7 @@ if (currentTask == 'dev'){
 // anything specific to build will be here
 if (currentTask == 'build'){
     /* rules added to make sure code has backward compatibility */
-    config.module.rules.push({
-        test: /\.js$/,
-        exclude: /(node_modules)/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env']
-            }
-        }
-    });
+
 
     // changes made to handle unique names for files by including the 'chunkhash'
     // chunkhash is the hash value of the file for comparison against what user has downloaded
