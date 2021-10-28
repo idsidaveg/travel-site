@@ -3,10 +3,9 @@ exports.handler = function(event, context, callback) {
         "Access-Control-Allow-Origin" : "*",
         "Access-Control-Allow-Headers" : "Content-Type"
     }
-
     if (event.httpMethod !== "POST"){
         return callback(null, {
-            statusCode = 200,
+            statusCode: 200,
             headers,
             body: "This is not a POST request"
         });
@@ -29,12 +28,14 @@ exports.handler = function(event, context, callback) {
     if (body.password == "JavaScript") {
         callback(null, {
             statusCode: 200,
+            headers,
             body: secretContent
         });
 
     } else {
         callback(null, {
-            statusCode: 401
+            statusCode: 401,
+            headers
         });
     }
 
