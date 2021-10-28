@@ -11,10 +11,12 @@ import 'lazysizes';
 import MobileMenu from './modules/MobileMenu';
 import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/Sticky-Header';
+import ClientArea from './modules/ClientArea';
 
 // create variables that we will use later, other modules will use
 // look at event-emitter on npm - broadcast events used to other modules
 // this is how the webcontrols work on sharepoint
+new ClientArea();
 new StickyHeader();
 new RevealOnScroll(document.querySelectorAll(".feature-item"), 75);
 new RevealOnScroll(document.querySelectorAll(".testimonial"), 60);
